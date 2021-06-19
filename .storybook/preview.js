@@ -24,8 +24,8 @@ export const parameters = {
     language: {
       control: {
         type: 'select',
-        options: ['en', 'it'],
       },
+      options: ['en', 'it'],
       defaultValue: 'en'
     }
   }
