@@ -46,22 +46,47 @@ const HorizontalScrollable = ({
     setCanLeftScroll(e.target.scrollLeft > 0)
   }
   return (
-    <Box position='relative' display='flex' alignItems='center' onScrollCapture={handleOnScrollCapture}>
+    <Box
+      position='relative'
+      display='flex'
+      alignItems='center'
+      onScrollCapture={handleOnScrollCapture}
+    >
       {canLeftScroll && (
-        <Box position='absolute' left={-20} className={classes.action}>
-          <Fab size='small' color='primary' onClick={handleOnLeft}>
+        <Box
+          position='absolute'
+          left={-20}
+          className={classes.action}
+        >
+          <Fab
+            size='small'
+            color='primary'
+            onClick={handleOnLeft}
+          >
             <ChevronLeft />
           </Fab>
         </Box>
       )}
       {(canRightScroll) && (
-        <Box position='absolute' right={-20} className={classes.action}>
-          <Fab size='small' color='primary' onClick={handleOnRight}>
+        <Box
+          position='absolute'
+          right={-20}
+          className={classes.action}
+        >
+          <Fab
+            size='small'
+            color='primary'
+            onClick={handleOnRight}
+          >
             <ChevronRight />
           </Fab>
         </Box>
       )}
-      <HorizontalScrollableGrid ref={containerRef} container spacing={3}>
+      <HorizontalScrollableGrid
+        ref={containerRef}
+        container
+        spacing={3}
+      >
         {children}
         {!isMobile && <Box minWidth={240} />}
       </HorizontalScrollableGrid>

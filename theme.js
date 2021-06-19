@@ -25,6 +25,20 @@ export const palette = {
 // Create a theme instance.
 const theme = createMuiTheme({
   props: {
+    MuiTextField: {
+      variant: 'outlined',
+      size: 'small',
+      fullWidth: true
+    },
+    MuiButton: {
+      fullWidth: true
+    },
+    MuiBox: {
+      width: '100%'
+    },
+    MuiGrid: {
+      spacing: 2
+    },
     MuiContainer: {
       maxWidth: 'xl',
     }

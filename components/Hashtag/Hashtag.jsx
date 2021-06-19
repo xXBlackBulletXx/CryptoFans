@@ -20,8 +20,14 @@ const Hashtag = ({
 }) => {
   const classes = useStyles()
   return (
-    <Typography className={classes.hashtag} variant='subtitle2'>
-      <Link href={`/tags/${label}`} color="inherit">
+    <Typography
+      className={classes.hashtag}
+      variant='subtitle2'
+    >
+      <Link
+        href={`/tags/${label}`}
+        color="inherit"
+      >
         #{label}
       </Link>
     </Typography>

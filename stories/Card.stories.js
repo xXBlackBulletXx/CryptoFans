@@ -14,7 +14,10 @@ export default {
 //👇 We create a “template” of how args map to rendering
 const CardStory = (args) => (
   <Box m={4}>
-    <Grid item sm={3}>
+    <Grid
+      item
+      sm={3}
+    >
       <CardComponent {...args} />
     </Grid>
   </Box>

@@ -22,9 +22,15 @@ const HashtagContainer = ({
 }) => {
   const classes = useStyles()
   return (
-    <Box width='100%' className={classes.hashtagContainer}>
+    <Box
+      width='100%'
+      className={classes.hashtagContainer}
+    >
       {hashtags.map((hashtag, index) => (
-        <Hashtag label={hashtag} key={index} />
+        <Hashtag
+          label={hashtag}
+          key={index}
+        />
       ))}
     </Box>
   )

@@ -4,12 +4,20 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <AppBar position='relative' color='inherit'>
+    <AppBar
+      position='relative'
+      color='inherit'
+    >
       <Toolbar>
         <IconButton position="left">
           <MenuIcon />
         </IconButton>
-        <Box flexGrow={1} display='flex' alignItems='center' justifyContent='center'>
+        <Box
+          flexGrow={1}
+          display='flex'
+          alignItems='center'
+          justifyContent='center'
+        >
           <Button>Home</Button>
           <Button>Discover</Button>
           <Button>Profile</Button>

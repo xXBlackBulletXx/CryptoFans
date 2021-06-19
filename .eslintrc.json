@@ -24,5 +24,12 @@
         "react"
     ],
     "rules": {
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "react/jsx-max-props-per-line": [2, { "maximum": 1 }],
+        "react/jsx-key": [1, { "checkFragmentShorthand": true }],
+        "react/jsx-indent-props": [2, 2],
+        "react/jsx-first-prop-new-line": [2, "multiline"],
+        "react/jsx-closing-bracket-location": [2, "tag-aligned"]
     }
 }

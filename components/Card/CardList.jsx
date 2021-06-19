@@ -16,7 +16,10 @@ const CardList = ({
       {sectionTitle && (
         <Box pb={2}>
           <Box borderBottom='3px solid black'>
-            <Typography variant='h4' component='h2'>{t(sectionTitle)}</Typography>
+            <Typography
+              variant='h4'
+              component='h2'
+            >{t(sectionTitle)}</Typography>
           </Box>
         </Box>
       )}
@@ -24,15 +27,28 @@ const CardList = ({
         {scrollableHorizontally ? (
           <HorizontalScrollable>
             {cards.map(card => (
-              <Grid item xs={12} md={3} key={card.id}>
+              <Grid
+                item
+                xs={12}
+                md={3}
+                key={card.id}
+              >
                 <Card {...card} />
               </Grid>
             ))}
           </HorizontalScrollable>
         ) : (
-          <Grid container spacing={2}>
+          <Grid
+            container
+            spacing={2}
+          >
             {cards.map(card => (
-              <Grid item xs={12} md={3} key={card.id}>
+              <Grid
+                item
+                xs={12}
+                md={3}
+                key={card.id}
+              >
                 <Card {...card} />
               </Grid>
             ))}

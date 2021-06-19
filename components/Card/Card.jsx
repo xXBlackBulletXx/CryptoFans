@@ -52,23 +52,54 @@ const Card = ({
     fullImage
   })
   return (
-    <CustomCard display='flex' flexDirection='column'>
+    <CustomCard
+      display='flex'
+      flexDirection='column'
+    >
       <Box className={classes.imageContainer}>
-        <img src={imageUrl} width='100%' height='100%' className={classes.image} />
+        <img
+          src={imageUrl}
+          width='100%'
+          height='100%'
+          className={classes.image}
+        />
       </Box>
       {!fullImage && (
-        <Box display='flex' p={2} flexDirection='column' flexGrow={1} justifyContent='space-evenly'>
+        <Box
+          display='flex'
+          p={2}
+          flexDirection='column'
+          flexGrow={1}
+          justifyContent='space-evenly'
+        >
           <HashtagContainer hashtags={hashtags}/>
-          <Box width='100%' display='flex' flexDirection='row' justifyContent='space-between'>
+          <Box
+            width='100%'
+            display='flex'
+            flexDirection='row'
+            justifyContent='space-between'
+          >
             {biddable ? (
               <>
-                <Typography variant='h6' component='h3'>{t('currentBid')}</Typography>
-                <Typography variant='h6' component='h3'>{actualBid} {bidCurrency}</Typography>
+                <Typography
+                  variant='h6'
+                  component='h3'
+                >{t('currentBid')}</Typography>
+                <Typography
+                  variant='h6'
+                  component='h3'
+                >{actualBid} {bidCurrency}</Typography>
               </>
             ) : (
               <>
-                <Typography variant='h6' component='h3'>{t('lastBid')}</Typography>
-                <Typography variant='h6' component='h3'>{actualBid} {bidCurrency}</Typography>
+                <Typography
+                  variant='h6'
+                  component='h3'
+                >{t('lastBid')}</Typography>
+                <Typography
+                  variant='h6'
+                  component='h3'
+                >{actualBid} {bidCurrency}</Typography>
               </>
             )}
           </Box>
