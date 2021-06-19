@@ -2,7 +2,7 @@ import { Button, withStyles } from '@material-ui/core'
 import { FaGoogle } from 'react-icons/fa'
 import React from 'react'
 import PropTypes from 'prop-types'
-import StyledButtonDefault from './StyledButtonDefault.styles'
+import StyledButtonDefault, { defaultProps } from './StyledButtonDefault.styles'
 
 const StyledButton = withStyles(() => ({
   root: {
@@ -23,7 +23,7 @@ const GoogleButton = ({
       fullWidth
       socialLabel={socialLabel}
       startIcon={<FaGoogle />}
-      size='large'
+      {...defaultProps}
     >
       {socialLabel && (
         <>

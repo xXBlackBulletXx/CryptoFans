@@ -2,7 +2,7 @@ import { Button, withStyles } from '@material-ui/core'
 import { FaFacebook } from 'react-icons/fa'
 import React from 'react'
 import PropTypes from 'prop-types'
-import StyledButtonDefault from './StyledButtonDefault.styles'
+import StyledButtonDefault, { defaultProps } from './StyledButtonDefault.styles'
 
 const StyledButton = withStyles(() => ({
   root: {
@@ -26,7 +26,7 @@ const FacebookButton = ({
       fullWidth
       socialLabel={socialLabel}
       startIcon={<FaFacebook />}
-      size='large'
+      {...defaultProps}
     >
       {socialLabel && (
         <>
