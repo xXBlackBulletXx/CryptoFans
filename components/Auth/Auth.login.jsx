@@ -8,7 +8,6 @@ const AuthLogin = () => {
   const { session } = useAuth()
   console.log('session', session)
   const handleOnLoginClick = async () => {
-    console.log(supabase)
     const status = await supabase.auth.signIn({
       provider: 'google'
     })
