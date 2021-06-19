@@ -5,17 +5,18 @@ import PropTypes from 'prop-types'
 import { FacebookButton, GoogleButton } from '../SocialButton'
 
 const AuthLogin = ({
-  socialLabel = false
+  socialLabel = false,
+  socialHorizontal = false
 }) => {
   const { session } = useAuth()
   return (
     <>
       {!session && (
         <Grid container spacing={1}>
-          <Grid item xs='auto'>
+          <Grid item xs={socialHorizontal ? 12 : 'auto'}>
             <FacebookButton socialLabel={socialLabel} />
           </Grid>
-          <Grid item xs='auto'>
+          <Grid item xs={socialHorizontal ? 12 : 'auto'}>
             <GoogleButton socialLabel={socialLabel} />
           </Grid>
         </Grid>
@@ -25,7 +26,8 @@ const AuthLogin = ({
 }
 
 AuthLogin.propTypes =  {
-  socialLabel: PropTypes.bool
+  socialLabel: PropTypes.bool,
+  socialHorizontal: PropTypes.bool
 }
 
 export default AuthLogin
