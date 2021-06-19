@@ -1,31 +1,31 @@
-import { Avatar } from '@material-ui/core'
-import { AccountCircleOutlined } from '@material-ui/icons'
 import React from 'react'
+import { Grid } from '@material-ui/core'
 import useAuth from '../../hooks/useAuth'
-import { supabase } from '../../services/supabaseClient'
+import PropTypes from 'prop-types'
+import { FacebookButton, GoogleButton } from '../SocialButton'
 
-const AuthLogin = () => {
+const AuthLogin = ({
+  socialLabel = false
+}) => {
   const { session } = useAuth()
-  console.log('session', session)
-  const handleOnLoginClick = async () => {
-    const status = await supabase.auth.signIn({
-      provider: 'google'
-    })
-    console.log(JSON.stringify(status))
-  }
   return (
     <>
-      {!session ? (
-        <Avatar onClick={handleOnLoginClick} color='primary'>
-          <AccountCircleOutlined />
-        </Avatar>
-      ) : (
-        <span>
-          AuthLogin
-        </span>
+      {!session && (
+        <Grid container spacing={1}>
+          <Grid item xs='auto'>
+            <FacebookButton socialLabel={socialLabel} />
+          </Grid>
+          <Grid item xs='auto'>
+            <GoogleButton socialLabel={socialLabel} />
+          </Grid>
+        </Grid>
       )}
     </>
   )
+}
+
+AuthLogin.propTypes =  {
+  socialLabel: PropTypes.bool
 }
 
 export default AuthLogin
