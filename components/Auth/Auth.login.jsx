@@ -1,15 +1,17 @@
 import React from 'react'
-import { Grid } from '@material-ui/core'
+import { Grid, Box, Typography } from '@material-ui/core'
 import useAuth from '../../hooks/useAuth'
 import PropTypes from 'prop-types'
 import { FacebookButton, GoogleButton } from '../SocialButton'
 import EmailAuth from './EmailAuth'
+import useAuthProviders from '../../hooks/useAuthProviders'
 
 const AuthLogin = ({
   socialLabel = false,
   socialHorizontal = false
 }) => {
   const { session } = useAuth()
+  const { email } = useAuthProviders()
   return (
     <>
       {!session && (
@@ -18,6 +20,7 @@ const AuthLogin = ({
             item
             container
             xs={12}
+            justify='center'
           >
             <Grid
               item
@@ -32,12 +35,44 @@ const AuthLogin = ({
               <GoogleButton socialLabel={socialLabel} />
             </Grid>
           </Grid>
-          <Grid
-            item
-            xs={12}
-          >
-            <EmailAuth />
-          </Grid>
+          {email && (
+            <>
+              <Grid
+                item
+                xs={12}
+                container
+                justify='center'
+              >
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                >
+                  <Box
+                    height='1px'
+                    bgcolor='#eee'
+                    display='flex'
+                    justifyContent='center'
+                    alignItems='center'
+                    color='#000000de'
+                  >
+                    <Box
+                      bgcolor='white'
+                      px={1}
+                    >
+                      <Typography variant='subtitle1'>Or</Typography>
+                    </Box>
+                  </Box>
+                </Grid>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+              >
+                <EmailAuth />
+              </Grid>
+            </>
+          )}
         </Grid>
       )}
     </>

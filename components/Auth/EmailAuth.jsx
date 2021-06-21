@@ -1,7 +1,11 @@
 import { Grid, TextField } from '@material-ui/core'
 import React from 'react'
+import { Controller, useForm } from 'react-hook-form'
 
 const EmailAuth = () => {
+  const {
+    control,
+  } = useForm()
   return (
     <Grid
       container
@@ -11,12 +15,17 @@ const EmailAuth = () => {
         item
         xs={12}
       >
-        <TextField
+        <Controller
+          name='email'
+          control={control}
+          render={({ field }) => <TextField {...field} />}
+        />
+        {/* <TextField
           id='email'
           name='email'
           label='Email'
           type='email'
-        />
+        /> */}
       </Grid>
       <Grid
         item
