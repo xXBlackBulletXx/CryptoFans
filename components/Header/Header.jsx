@@ -1,8 +1,10 @@
-import { AppBar, Box, Button, IconButton, Toolbar } from '@material-ui/core'
+import { AppBar, Avatar, Box, Button, IconButton, Toolbar } from '@material-ui/core'
 import { Menu as MenuIcon, AccountCircle } from '@material-ui/icons'
 import React from 'react'
+import useAuth from '../../hooks/useAuth'
 
 const Header = () => {
+  const { session } = useAuth()
   return (
     <AppBar
       position='relative'
@@ -22,9 +24,15 @@ const Header = () => {
           <Button>Discover</Button>
           <Button>Profile</Button>
         </Box>
-        <IconButton>
-          <AccountCircle />
-        </IconButton>
+        {!session ? (
+          <IconButton>
+            <AccountCircle />
+          </IconButton>
+        ) : (
+          <IconButton>
+            <Avatar />
+          </IconButton>
+        )}
       </Toolbar>
     </AppBar>
   )
